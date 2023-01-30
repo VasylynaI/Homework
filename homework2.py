@@ -17,7 +17,7 @@ try:
     else:
         print('There are no more tickets!')
 except:
-    print('Please enter the integer')
+    print('Please enter the integer')git
 
 
 
