@@ -1,6 +1,26 @@
 # Exercise 1
 # Напишіть цикл, який буде вимагати від користувача ввести слово, в якому є буква "о"
 # (враховуються як великі так і маленькі). Цикл не повинен завершитися, якщо користувач ввів слово без букви "о".
+
+# First method
+while True:
+    user_input = input('Enter the word that contains the letter "o": ')
+    user_input = user_input.lower()
+
+    if 'o' in user_input:
+        print('Great job')
+        break
+    else:
+        print('Try again')
+
+# Second method
+while True:
+    user_input = input('Enter the word that contains the letter "o": ')
+    user_input = user_input.lower()
+
+    print('Great job') if 'o' in user_input else print('Try again')
+
+# Third method
 while True:
     user_input = input('Enter the word that contains the letter "o": ')
     user_input = user_input.lower()
@@ -32,12 +52,14 @@ print(new_list)
 # Є стрінг з певним текстом (можна скористатися input або константою).
 # Напишіть код, який визначить кількість слів в цьому тексті, які закінчуються на "о"
 # (враховуються як великі так і маленькі).
-my_str = 'you do not have tO go tO the school'
-my_str = my_str.lower()
-my_list = my_str.split()
-result = []
 
-for elem in my_list:
-    if elem[-1] == 'o':
-        result.append(elem)
+my_str = 'you do) not have tO, go tO! the school'
+my_str = my_str.lower()
+parts = [''.join(elem for elem in my_str if elem.isalpha()) for my_str in my_str.split()]
+print(parts)
+
+result = []
+for part in parts:
+    if part[-1] == 'o':
+        result.append(part)
 print(len(result))
