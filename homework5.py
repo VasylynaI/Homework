@@ -74,28 +74,24 @@ for key, value in student.items():
 # 3 - визначити середній бал по групі
 # method 1
 list = student.values()
-sum = sum(item['Середній бал'] for item in list)
-result = (sum / len(list))
+result = sum(item['Середній бал'] for item in list) / len(list)
 print(f'Середній бал групи: {result}')
 
 # method 2
+length = len(student)
 suma = 0
-count = 0
 for value in student.values():
-    count += 1
     suma += value['Середній бал']
 
-average_goal = suma / count
+average_goal = suma / length
 print(f"Середній бал групи: {average_goal}")
 
 # 4 - при відсутності номеру телефону у студента записати номер батьків (номер на ваш вибір)
 for value in student.values():
-    student.get('Номер телефону')
     if value['Номер телефону'] is None:
         value['Номер телефону'] = '+380678889090'
 
 print(student)
-
 
 
 
