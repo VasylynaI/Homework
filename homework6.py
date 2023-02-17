@@ -5,7 +5,7 @@
 # В будь-якому іншому випадку - функція повертає кортеж з двох агрументів
 def my_function(arg1, arg2):
 
-    if is_int(arg1) and is_int(arg2):
+    if is_multiple(arg1) and is_multiple(arg2):
         return arg1 * arg2
 
     elif is_str(arg1) and is_str(arg2):
@@ -17,7 +17,7 @@ def my_function(arg1, arg2):
 def is_str(arg):
     return isinstance(arg, str)
 
-def is_int(arg):
+def is_multiple(arg):
     if type(arg) in (float, int):
         return float, int
 
@@ -34,10 +34,9 @@ def take_user_age():
         return user_age
     except:
         print('Please enter the integer')
-        return take_user_age()
 
 def checking_user_age(age):
-    if '7' in str(age) or age == 7:
+    if '7' in str(age):
         print('You will be lucky today!')
     elif age <= 7:
         print('Where are your parents?')
@@ -61,14 +60,4 @@ def game():
     validation_user_age()
 
 game()
-
-
-
-
-
-
-
-
-
-
 
