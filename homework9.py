@@ -5,56 +5,52 @@
 
 class Vehicle:
     """Simple vehicle modeling"""
-    def __init__(self, vehicle_type):
-        """Initialize attributes name and type"""
+    def __init__(self, vehicle_type, make, modal, year):
+        """Initialize attributes type, make, modal, year"""
         self.vehicle_type = vehicle_type
+        self.make = make
+        self.modal = modal
+        self.year = year
 
-    """Return vehicle type"""
-    def get_vehicle_type(self):
-        return f'This vehicle refers to {self.vehicle_type}.'
+
+    def get_vehicle_descriptive(self):
+        """Return vehicle type and detail information"""
+        return f'This vehicle refers to {self.vehicle_type}. Detail information:' \
+               f' {self.make}, {self.modal}, {self.year}.'
 
 class Car(Vehicle):
-    """Initialize attributes which describes the car"""
-    make = 'audi'
-    model = 'q8'
-    year = 2020
+    """Initialize attributes which describes the car fuel type"""
+    fuel_type = 'diesel'
 
-    """Return formatted name"""
-    def get_descriptive_name(self):
-        long_name = (f'Car information: {self.make}, {self.model}, {self.year}')
-        return long_name.title()
+    def get_fuel_descriptive(self):
+        """Return fuel descriptive"""
+        return f'fuel type - {self.fuel_type}'
 
 class AirPlain(Vehicle):
-    """Initialize attributes which describes the airplain"""
-    make = 'Мрія'
-    model = 'Ан-225'
-    year = 1988
+    """Initialize attributes which describes the wingspan"""
+    wingspan = '88 meters'
 
-    """Return formatted name"""
-    def get_descriptive_name(self):
-        long_name = (f'Airplain information: {self.make}, {self.model}, {self.year}')
-        return long_name.title()
+    def get_wingspan_descriptive(self):
+        """Return wingspan descriptive"""
+        return f'Wingspan - {self.wingspan} meters'
 
 class Ship(Vehicle):
-    """Initialize attributes which describes the airplain"""
-    make = 'Титанік'
-    model = 'RMS Titanic'
-    year = 1908
+    """Initialize attributes which describes the ship length"""
+    length = 120
 
-    """Return formatted name"""
+    def get_length_descriptive(self):
+        """Return length descriptive"""
+        return f"Length - {self.length} meters"
 
-    def get_descriptive_name(self):
-        long_name = (f'Airplain information: {self.make}, {self.model}, {self.year}')
-        return long_name.title()
 
-my_car = Car('car')
-print(my_car.get_vehicle_type())
-print(my_car.get_descriptive_name())
+my_car = Car('car', 'audi', 'q8', 2020)
+print(my_car.get_vehicle_descriptive())
+print(my_car.get_fuel_descriptive())
 
-my_airplain = AirPlain('airplain')
-print(my_airplain.get_vehicle_type())
-print(my_airplain.get_descriptive_name())
+my_airplain = AirPlain('airplain', 'Мрія', 'Ан-225', 1988)
+print(my_airplain.get_vehicle_descriptive())
+print(my_airplain.get_wingspan_descriptive())
 
-my_ship = Ship('ship')
-print(my_ship.get_vehicle_type())
-print(my_ship.get_descriptive_name())
+my_ship = Ship('ship', 'Titanic', 'RMS ', 1908)
+print(my_ship.get_vehicle_descriptive())
+print(my_ship.get_length_descriptive())
